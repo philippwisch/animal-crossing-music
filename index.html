@@ -3,27 +3,27 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Animal Crossing Music</title>
     <link href="./style.css" rel="stylesheet" type="text/css" />
 </head>
 
 <body>
-    <iframe hidden width="100%" height="300" scrolling="no" frameborder="no" allow="autoplay"
-        src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/abc&color=%239ab7c4&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
 
 
 
     <div class="container">
-        <div id="logoContainer">
-            <div id="clock">
-                <div id="hour"></div>
-                <div id="minute"></div>
-                <div id="second"></div>
+
+
+
+        <div style="position:relative; top: -40px;">
+                <div id="clock">
+                    <div id="hour"></div>
+                    <div id="minute"></div>
+                    <div id="second"></div>
+                    <div id="circle"></div>
             </div>
-            <div>
-                <img src="logo.png" style="width: 500px;" />
-            </div>
+            <img id="logo" src="logo.webp" />
         </div>
 
 
@@ -35,8 +35,12 @@
                 <polygon style="display: none" class="pause-symbol symbol" points="75,10 55,10 55,90, 75,90" />
             </svg>
         </button>
-        <div id="info">Space / Enter / Click</div>
+
+
+
     </div>
+    <iframe hidden width="100%" height="300" scrolling="no" frameborder="no" allow="autoplay"
+        src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/abc&color=%239ab7c4&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
 
     <script src="./soundcloud-api.js"></script>
     <script src="./script.js"></script>

@@ -84,6 +84,17 @@ widget.bind(SC.Widget.Events.FINISH, function () {
     widget.play();
 })
 
+// Space and Enter to play/pause
+document.addEventListener('keydown', function (event) {
+
+    if (event.code === 'Space' || event.code === 'Enter') {
+        event.preventDefault();
+        document.getElementById('play-pause').click();
+    }
+});
+
+
+
 // Move clock pointers
 setInterval(() => {
     d = new Date(); //object of date()
@@ -99,11 +110,19 @@ setInterval(() => {
     second.style.transform = `rotate(${sec_rotation}deg)`;
 }, 1000);
 
-// Space and Enter to play/pause
-document.addEventListener('keydown', function (event) {
+function resize_clock() {
+    let logo = document.getElementById('logo');
+    let clock = document.getElementById('clock');
+    ratio = logo.offsetWidth / 402;
 
-    if (event.code === 'Space' || event.code === 'Enter') {
-        event.preventDefault();
-        document.getElementById('play-pause').click();
-    }
-});
+    clock.style.transform = `scale(${ratio})`;
+    clock.style.top = `${ratio * 63}px`;
+}
+
+window.onload = () => {
+    resize_clock();
+}
+
+window.onresize = () => {
+    resize_clock();
+}
